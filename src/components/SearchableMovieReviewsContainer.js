@@ -45,8 +45,10 @@ export default class SearchableMovieReviewsContainer extends Component {
   render() {
   return (
   <div className= "searchable-movie-reviews">
+      <form onSubmit={this.onsubmit}>
       <input type="text" value={this.state.searchTerm} onChange={this.handleChange}></input> <br></br>
-      <button onClick={this.onsubmit} >Search movie reviews  </button>
+      <button type = "submit">Search movie reviews  </button>
+      </form>
     <MovieReviews  reviews={this.state.reviews}/>
   </div>
 
