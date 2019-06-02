@@ -1,14 +1,14 @@
-import React  from 'react'
-const MovieReviews = ({reviews}) =>  {
+// Code MovieReviews Here
+import React from 'react';
+const MovieReviews = props =>  {
 return(
   <div className= "review-list">
-{reviews.map(review =>{
+{props.reviews.map(review =>{
   return (
 
     <div className="review">
   <li>{review.display_title}</li>
-      <li>{review.summary_short}</li>
-      <li>{review.opening_date}</li>
+  <li>{review.display_title}</li>
   </div>
     )
 })}

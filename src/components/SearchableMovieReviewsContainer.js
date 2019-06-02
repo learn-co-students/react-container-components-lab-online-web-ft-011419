@@ -5,7 +5,7 @@ import MovieReviews from './MovieReviews'
 const NYT_API_KEY = 'f98593a095b44546bf4073744b540da0';
 
 const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query'
-  + `api-key=${NYT_API_KEY} & query=`;
+  + `api-key=${NYT_API_KEY}&query=`;
 
 // Code SearchableMovieReviewsContainer Here
 export default class SearchableMovieReviewsContainer extends Component {
@@ -13,18 +13,20 @@ export default class SearchableMovieReviewsContainer extends Component {
     super(props);
 
     this.state = {
-     reviews: "",
+     reviews: [],
      searchTerm: ""
     };
   }
 
   handleChange = (event)=>{
+   // event.preventDefault();
     this.setState(
       {searchTerm: event.target.value }
 
     )
   }
-  onsubmit = () => {
+  onsubmit = (event) => {
+    event.preventDefault();
     fetch(`${URL}`+`${this.state.searchTerm}`)
       .then(response => response.json())
       .then(data => this.setState({ reviews: data.results }))
