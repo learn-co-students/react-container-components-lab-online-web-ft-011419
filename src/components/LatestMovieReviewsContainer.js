@@ -7,7 +7,7 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/all.json?'
             + `api-key=${NYT_API_KEY}`;
 
 // Code LatestMovieReviewsContainer Here
-export class LatestMovieReviewsContainer  extends Component {
+export default class LatestMovieReviewsContainer  extends Component {
   constructor(props) {
     super(props);
 
@@ -27,7 +27,7 @@ fetch(`${URL}`)
 
 render() {
   return (
-    <div classname="latest-movie-reviews">
+    <div className="latest-movie-reviews">
       <MovieReviews reviews={this.state.reviews} />
 
     </div>

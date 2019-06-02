@@ -8,7 +8,7 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query'
   + `api-key=${NYT_API_KEY} & query=`;
 
 // Code SearchableMovieReviewsContainer Here
-export  class SearchableMovieReviewsContainer extends Component {
+export default class SearchableMovieReviewsContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -45,7 +45,7 @@ export  class SearchableMovieReviewsContainer extends Component {
   <div className= "searchable-movie-reviews">
       <input type="text" value={this.state.searchTerm} onChange={this.handleChange}></input> <br></br>
       <button onClick={this.onsubmit} >Search movie reviews  </button>
-    <MovieReviews  reviewSearch={this.state.reviews}/>
+    <MovieReviews  reviews={this.state.reviews}/>
   </div>
 
 )
